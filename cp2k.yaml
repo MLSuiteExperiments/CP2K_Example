@@ -26,7 +26,7 @@ force_eval:
         nbuffer: 8
       scf_guess: restart
       eps_scf: 1e-07
-      max_scf: 10
+      max_scf: 100
     basis_set_file_name: BASIS_SET
     potential_file_name: GTH_POTENTIALS
   method: quickstep
