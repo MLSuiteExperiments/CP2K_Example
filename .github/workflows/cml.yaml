@@ -35,7 +35,7 @@ jobs:
       - name: Install package
         shell: bash -l {0}
         run: |
-          pip install -e git+https://github.com/zincware/znlib.git#egg=project[atomistic]
+          pip install -e git+https://github.com/zincware/znlib.git#egg=znlib[atomistic]
       - name: DVC Repro
         shell: bash -l {0}
         run: |
