@@ -1,0 +1,32 @@
+force_eval:
+  subsys:
+    kind:
+      Si:
+        element: Si
+        basis_set: DZVP-GTH-PADE
+        potential: GTH-PADE-q4
+  DFT:
+    QS:
+      eps_default: 1e-10
+    mgrid:
+      ngrids: 4
+      cutoff: 300.0
+      rel_cutoff: 60.0
+    XC:
+      xc_functional:
+        _: PADE
+    SCF:
+      diagonalization:
+        _: true
+        algorithm: standard
+      mixing:
+        _: true
+        method: broyden_mixing
+        alpha: 0.4
+        nbuffer: 8
+      scf_guess: restart
+      eps_scf: 1e-07
+      max_scf: 10
+    basis_set_file_name: BASIS_SET
+    potential_file_name: GTH_POTENTIALS
+  method: quickstep
