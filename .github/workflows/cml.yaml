@@ -39,4 +39,8 @@ jobs:
       - name: DVC Repro
         shell: bash -l {0}
         run: |
-          dvc repro
+          # 25 h / mon
+          dvc remote modify origin --local auth basic
+          dvc remote modify origin --local user  ${{ secrets.REMOTE_USER }}
+          dvc remote modify origin --local password ${{ secrets.REMOTE_PASSWORD }}
+          dvc repro --pull
