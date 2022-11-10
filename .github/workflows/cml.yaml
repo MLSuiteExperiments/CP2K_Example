@@ -42,5 +42,6 @@ jobs:
           dvc remote modify origin --local auth basic
           dvc remote modify origin --local user  ${{ secrets.REMOTE_USER }}
           dvc remote modify origin --local password ${{ secrets.REMOTE_PASSWORD }}
-          dvc checkout
-          dvc repro --pull
+          dvc remote default origin
+          dvc pull
+          dvc repro
