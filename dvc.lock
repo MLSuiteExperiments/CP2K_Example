@@ -655,3 +655,379 @@ stages:
     - path: nodes/train_cp2k_5/outputs.db
       md5: f2dab4c9e2a5d183159a06a324cca1fe
       size: 86016
+  train_atoms_7:
+    cmd: "python3 -c \"from znlib.atomistic.ase import FileToASE; FileToASE.load(name='train_atoms_7').run_and_save()\"\
+      \ "
+    deps:
+    - path: configurations/training_311.extxyz
+      md5: 491a123d9d6ab3af8d912d7d8c1349aa
+      size: 31634
+    params:
+      params.yaml:
+        train_atoms_7:
+          frames_to_read:
+    outs:
+    - path: nodes/train_atoms_7/atoms.db
+      md5: af0c94f9ef3662722c85eef21475f443
+      size: 81920
+  train_atoms_8:
+    cmd: "python3 -c \"from znlib.atomistic.ase import FileToASE; FileToASE.load(name='train_atoms_8').run_and_save()\"\
+      \ "
+    deps:
+    - path: configurations/training_029.extxyz
+      md5: ede83122e4aeaef6d1357b234d4ed59a
+      size: 31636
+    params:
+      params.yaml:
+        train_atoms_8:
+          frames_to_read:
+    outs:
+    - path: nodes/train_atoms_8/atoms.db
+      md5: cda4ba0e22d201872810f98eacd8d05e
+      size: 81920
+  train_cp2k_8:
+    cmd: "python3 -c \"from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name='train_cp2k_8').run_and_save()\"\
+      \ "
+    deps:
+    - path: BASIS_SET
+      md5: a4d2d2b3cec0beb7cb83ceb29dfdc76a
+      size: 193663
+    - path: GTH_POTENTIALS
+      md5: 3a35b03b26b8ba5cf6c1d849dba11f15
+      size: 128982
+    - path: nodes/train_atoms_8/atoms.db
+      md5: cda4ba0e22d201872810f98eacd8d05e
+      size: 81920
+    - path: nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+      md5: 85a3e509a55e495240212506ed3b3ea2
+      size: 12172644
+    params:
+      cp2k.yaml:
+        force_eval:
+          DFT:
+            mgrid:
+              cutoff: 1800.0
+              rel_cutoff: 120.0
+              ngrids: 5
+            QS:
+              eps_filter_matrix: 0.0
+              eps_pgf_orb: 0.0001
+            SCF:
+              OT:
+                minimizer: diis
+                preconditioner: full_single_inverse
+              outer_scf:
+                max_scf: 100
+                eps_scf: 1e-06
+              scf_guess: restart
+              max_scf: 100
+              eps_scf: 1e-06
+            XC:
+              xc_functional:
+                becke97:
+                  scale_c: 1.0
+                  scale_x: 1.0
+              vdw_potential:
+                pair_potential:
+                  type: dftd3(bj)
+                  parameter_file_name: dftd3.dat
+                  reference_functional: B97-3c
+                  r_cutoff: 7.93766
+                  calculate_c9_term: true
+                  short_range_correction: true
+                potential_type: pair_potential
+            charge: 0
+            basis_set_file_name: GTH_BASIS_SETS
+            potential_file_name: GTH_POTENTIALS
+          subsys:
+            kind:
+              N:
+                basis_set: TZVP-GTH-q5
+                potential: GTH-PBE-q5
+              C:
+                basis_set: TZVP-GTH-q4
+                potential: GTH-PBE-q4
+              H:
+                basis_set: TZVP-GTH-q1
+                potential: GTH-PBE-q1
+              B:
+                basis_set: TZVP-GTH-q3
+                potential: GTH-PBE-q3
+              F:
+                basis_set: TZVP-GTH-q7
+                potential: GTH-PBE-q7
+    outs:
+    - path: nodes/train_cp2k_8/cp2k
+      md5: 9fa71ab51bd56c89647fdec367ec5a1a.dir
+      size: 48876105
+      nfiles: 6
+    - path: nodes/train_cp2k_8/outputs.db
+      md5: a8181bb90a0018d5517e2a95fd9c35d4
+      size: 86016
+  train_cp2k_7:
+    cmd: "python3 -c \"from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name='train_cp2k_7').run_and_save()\"\
+      \ "
+    deps:
+    - path: BASIS_SET
+      md5: a4d2d2b3cec0beb7cb83ceb29dfdc76a
+      size: 193663
+    - path: GTH_POTENTIALS
+      md5: 3a35b03b26b8ba5cf6c1d849dba11f15
+      size: 128982
+    - path: nodes/train_atoms_7/atoms.db
+      md5: af0c94f9ef3662722c85eef21475f443
+      size: 81920
+    - path: nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+      md5: 85a3e509a55e495240212506ed3b3ea2
+      size: 12172644
+    params:
+      cp2k.yaml:
+        force_eval:
+          DFT:
+            mgrid:
+              cutoff: 1800.0
+              rel_cutoff: 120.0
+              ngrids: 5
+            QS:
+              eps_filter_matrix: 0.0
+              eps_pgf_orb: 0.0001
+            SCF:
+              OT:
+                minimizer: diis
+                preconditioner: full_single_inverse
+              outer_scf:
+                max_scf: 100
+                eps_scf: 1e-06
+              scf_guess: restart
+              max_scf: 100
+              eps_scf: 1e-06
+            XC:
+              xc_functional:
+                becke97:
+                  scale_c: 1.0
+                  scale_x: 1.0
+              vdw_potential:
+                pair_potential:
+                  type: dftd3(bj)
+                  parameter_file_name: dftd3.dat
+                  reference_functional: B97-3c
+                  r_cutoff: 7.93766
+                  calculate_c9_term: true
+                  short_range_correction: true
+                potential_type: pair_potential
+            charge: 0
+            basis_set_file_name: GTH_BASIS_SETS
+            potential_file_name: GTH_POTENTIALS
+          subsys:
+            kind:
+              N:
+                basis_set: TZVP-GTH-q5
+                potential: GTH-PBE-q5
+              C:
+                basis_set: TZVP-GTH-q4
+                potential: GTH-PBE-q4
+              H:
+                basis_set: TZVP-GTH-q1
+                potential: GTH-PBE-q1
+              B:
+                basis_set: TZVP-GTH-q3
+                potential: GTH-PBE-q3
+              F:
+                basis_set: TZVP-GTH-q7
+                potential: GTH-PBE-q7
+    outs:
+    - path: nodes/train_cp2k_7/cp2k
+      md5: 5ecd3d5c09703663a90ecca3398af217.dir
+      size: 48887706
+      nfiles: 6
+    - path: nodes/train_cp2k_7/outputs.db
+      md5: 1b2acd2a7eeadc1e272feeaf2451221f
+      size: 86016
+  train_atoms_10:
+    cmd: "python3 -c \"from znlib.atomistic.ase import FileToASE; FileToASE.load(name='train_atoms_10').run_and_save()\"\
+      \ "
+    deps:
+    - path: configurations/training_432.extxyz
+      md5: 160142fcdbd3e8d9eb69a971cd0c1b08
+      size: 31636
+    params:
+      params.yaml:
+        train_atoms_10:
+          frames_to_read:
+    outs:
+    - path: nodes/train_atoms_10/atoms.db
+      md5: 1811730d16529b1aa9bf5d0375e70640
+      size: 81920
+  train_cp2k_10:
+    cmd: "python3 -c \"from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name='train_cp2k_10').run_and_save()\"\
+      \ "
+    deps:
+    - path: BASIS_SET
+      md5: a4d2d2b3cec0beb7cb83ceb29dfdc76a
+      size: 193663
+    - path: GTH_POTENTIALS
+      md5: 3a35b03b26b8ba5cf6c1d849dba11f15
+      size: 128982
+    - path: nodes/train_atoms_10/atoms.db
+      md5: 1811730d16529b1aa9bf5d0375e70640
+      size: 81920
+    - path: nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+      md5: 85a3e509a55e495240212506ed3b3ea2
+      size: 12172644
+    params:
+      cp2k.yaml:
+        force_eval:
+          DFT:
+            mgrid:
+              cutoff: 1800.0
+              rel_cutoff: 120.0
+              ngrids: 5
+            QS:
+              eps_filter_matrix: 0.0
+              eps_pgf_orb: 0.0001
+            SCF:
+              OT:
+                minimizer: diis
+                preconditioner: full_single_inverse
+              outer_scf:
+                max_scf: 100
+                eps_scf: 1e-06
+              scf_guess: restart
+              max_scf: 100
+              eps_scf: 1e-06
+            XC:
+              xc_functional:
+                becke97:
+                  scale_c: 1.0
+                  scale_x: 1.0
+              vdw_potential:
+                pair_potential:
+                  type: dftd3(bj)
+                  parameter_file_name: dftd3.dat
+                  reference_functional: B97-3c
+                  r_cutoff: 7.93766
+                  calculate_c9_term: true
+                  short_range_correction: true
+                potential_type: pair_potential
+            charge: 0
+            basis_set_file_name: GTH_BASIS_SETS
+            potential_file_name: GTH_POTENTIALS
+          subsys:
+            kind:
+              N:
+                basis_set: TZVP-GTH-q5
+                potential: GTH-PBE-q5
+              C:
+                basis_set: TZVP-GTH-q4
+                potential: GTH-PBE-q4
+              H:
+                basis_set: TZVP-GTH-q1
+                potential: GTH-PBE-q1
+              B:
+                basis_set: TZVP-GTH-q3
+                potential: GTH-PBE-q3
+              F:
+                basis_set: TZVP-GTH-q7
+                potential: GTH-PBE-q7
+    outs:
+    - path: nodes/train_cp2k_10/cp2k
+      md5: 3d19568944f75d94e0ee8cba27e18fe8.dir
+      size: 48876114
+      nfiles: 6
+    - path: nodes/train_cp2k_10/outputs.db
+      md5: 92d5a5c797058ca4fca0bd6187e05e4a
+      size: 86016
+  train_atoms_9:
+    cmd: "python3 -c \"from znlib.atomistic.ase import FileToASE; FileToASE.load(name='train_atoms_9').run_and_save()\"\
+      \ "
+    deps:
+    - path: configurations/training_397.extxyz
+      md5: 3008e42f40c9a9b2e5bc7656244e84a2
+      size: 31636
+    params:
+      params.yaml:
+        train_atoms_9:
+          frames_to_read:
+    outs:
+    - path: nodes/train_atoms_9/atoms.db
+      md5: 1978736eb28a004a8b850dcdf77b20eb
+      size: 81920
+  train_cp2k_9:
+    cmd: "python3 -c \"from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name='train_cp2k_9').run_and_save()\"\
+      \ "
+    deps:
+    - path: BASIS_SET
+      md5: a4d2d2b3cec0beb7cb83ceb29dfdc76a
+      size: 193663
+    - path: GTH_POTENTIALS
+      md5: 3a35b03b26b8ba5cf6c1d849dba11f15
+      size: 128982
+    - path: nodes/train_atoms_9/atoms.db
+      md5: 1978736eb28a004a8b850dcdf77b20eb
+      size: 81920
+    - path: nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+      md5: 85a3e509a55e495240212506ed3b3ea2
+      size: 12172644
+    params:
+      cp2k.yaml:
+        force_eval:
+          DFT:
+            mgrid:
+              cutoff: 1800.0
+              rel_cutoff: 120.0
+              ngrids: 5
+            QS:
+              eps_filter_matrix: 0.0
+              eps_pgf_orb: 0.0001
+            SCF:
+              OT:
+                minimizer: diis
+                preconditioner: full_single_inverse
+              outer_scf:
+                max_scf: 100
+                eps_scf: 1e-06
+              scf_guess: restart
+              max_scf: 100
+              eps_scf: 1e-06
+            XC:
+              xc_functional:
+                becke97:
+                  scale_c: 1.0
+                  scale_x: 1.0
+              vdw_potential:
+                pair_potential:
+                  type: dftd3(bj)
+                  parameter_file_name: dftd3.dat
+                  reference_functional: B97-3c
+                  r_cutoff: 7.93766
+                  calculate_c9_term: true
+                  short_range_correction: true
+                potential_type: pair_potential
+            charge: 0
+            basis_set_file_name: GTH_BASIS_SETS
+            potential_file_name: GTH_POTENTIALS
+          subsys:
+            kind:
+              N:
+                basis_set: TZVP-GTH-q5
+                potential: GTH-PBE-q5
+              C:
+                basis_set: TZVP-GTH-q4
+                potential: GTH-PBE-q4
+              H:
+                basis_set: TZVP-GTH-q1
+                potential: GTH-PBE-q1
+              B:
+                basis_set: TZVP-GTH-q3
+                potential: GTH-PBE-q3
+              F:
+                basis_set: TZVP-GTH-q7
+                potential: GTH-PBE-q7
+    outs:
+    - path: nodes/train_cp2k_9/cp2k
+      md5: c80b717e13cc7790a346b128b4b26588.dir
+      size: 48876091
+      nfiles: 6
+    - path: nodes/train_cp2k_9/outputs.db
+      md5: 702669561d4db971c509f43165795848
+      size: 86016
