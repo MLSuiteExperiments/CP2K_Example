@@ -1,70 +1,120 @@
 stages:
-    atoms_0:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_0'').run_and_save()" '
+    train_atoms_0:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_0'').run_and_save()" '
         deps:
-        - configurations/000.extxyz
+        - configurations/training_750.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_0/atoms.db
+        - nodes/train_atoms_0/atoms.db
         params:
-        - atoms_0
-    atoms_1:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_1'').run_and_save()" '
+        - train_atoms_0
+    train_atoms_1:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_1'').run_and_save()" '
         deps:
-        - configurations/002.extxyz
+        - configurations/training_027.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_1/atoms.db
+        - nodes/train_atoms_1/atoms.db
         params:
-        - atoms_1
-    atoms_2:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_2'').run_and_save()" '
+        - train_atoms_1
+    train_atoms_10:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_10'').run_and_save()" '
         deps:
-        - configurations/001.extxyz
+        - configurations/training_432.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_2/atoms.db
+        - nodes/train_atoms_10/atoms.db
         params:
-        - atoms_2
-    atoms_3:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_3'').run_and_save()" '
+        - train_atoms_10
+    train_atoms_2:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_2'').run_and_save()" '
         deps:
-        - configurations/004.extxyz
+        - configurations/training_623.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_3/atoms.db
+        - nodes/train_atoms_2/atoms.db
         params:
-        - atoms_3
-    atoms_4:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_4'').run_and_save()" '
+        - train_atoms_2
+    train_atoms_3:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_3'').run_and_save()" '
         deps:
-        - configurations/003.extxyz
+        - configurations/training_302.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_4/atoms.db
+        - nodes/train_atoms_3/atoms.db
         params:
-        - atoms_4
-    atoms_5:
-        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''atoms_5'').run_and_save()" '
+        - train_atoms_3
+    train_atoms_4:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_4'').run_and_save()" '
         deps:
-        - configurations/005.extxyz
+        - configurations/training_212.extxyz
         desc: "Read an ASE compatible file and make it available as list of atoms\
             \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
         outs:
-        - nodes/atoms_5/atoms.db
+        - nodes/train_atoms_4/atoms.db
         params:
-        - atoms_5
-    cp2k_0:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_0'').run_and_save()" '
+        - train_atoms_4
+    train_atoms_5:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_5'').run_and_save()" '
+        deps:
+        - configurations/training_780.extxyz
+        desc: "Read an ASE compatible file and make it available as list of atoms\
+            \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
+        outs:
+        - nodes/train_atoms_5/atoms.db
+        params:
+        - train_atoms_5
+    train_atoms_6:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_6'').run_and_save()" '
+        deps:
+        - configurations/training_738.extxyz
+        desc: "Read an ASE compatible file and make it available as list of atoms\
+            \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
+        outs:
+        - nodes/train_atoms_6/atoms.db
+        params:
+        - train_atoms_6
+    train_atoms_7:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_7'').run_and_save()" '
+        deps:
+        - configurations/training_311.extxyz
+        desc: "Read an ASE compatible file and make it available as list of atoms\
+            \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
+        outs:
+        - nodes/train_atoms_7/atoms.db
+        params:
+        - train_atoms_7
+    train_atoms_8:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_8'').run_and_save()" '
+        deps:
+        - configurations/training_029.extxyz
+        desc: "Read an ASE compatible file and make it available as list of atoms\
+            \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
+        outs:
+        - nodes/train_atoms_8/atoms.db
+        params:
+        - train_atoms_8
+    train_atoms_9:
+        cmd: 'python3 -c "from znlib.atomistic.ase import FileToASE; FileToASE.load(name=''train_atoms_9'').run_and_save()" '
+        deps:
+        - configurations/training_397.extxyz
+        desc: "Read an ASE compatible file and make it available as list of atoms\
+            \ objects\n\n    The atoms object is a LazyAtomsSequence\n    "
+        outs:
+        - nodes/train_atoms_9/atoms.db
+        params:
+        - train_atoms_9
+    train_cp2k_0:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_0'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_0/atoms.db
+        - nodes/train_atoms_0/atoms.db
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -83,17 +133,17 @@ stages:
         meta:
             cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_0/cp2k
-        - nodes/cp2k_0/outputs.db
+        - nodes/train_cp2k_0/cp2k
+        - nodes/train_cp2k_0/outputs.db
         params:
         -   cp2k.yaml: null
-    cp2k_1:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_1'').run_and_save()" '
+    train_cp2k_1:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_1'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_1/atoms.db
-        - nodes/cp2k_0/cp2k/cp2k-RESTART.wfn
+        - nodes/train_atoms_1/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -112,17 +162,17 @@ stages:
         meta:
             cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_1/cp2k
-        - nodes/cp2k_1/outputs.db
+        - nodes/train_cp2k_1/cp2k
+        - nodes/train_cp2k_1/outputs.db
         params:
         -   cp2k.yaml: null
-    cp2k_2:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_2'').run_and_save()" '
+    train_cp2k_10:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_10'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_2/atoms.db
-        - nodes/cp2k_0/cp2k/cp2k-RESTART.wfn
+        - nodes/train_atoms_10/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -141,17 +191,17 @@ stages:
         meta:
             cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_2/cp2k
-        - nodes/cp2k_2/outputs.db
+        - nodes/train_cp2k_10/cp2k
+        - nodes/train_cp2k_10/outputs.db
         params:
         -   cp2k.yaml: null
-    cp2k_3:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_3'').run_and_save()" '
+    train_cp2k_2:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_2'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_3/atoms.db
-        - nodes/cp2k_0/cp2k/cp2k-RESTART.wfn
+        - nodes/train_atoms_2/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -170,17 +220,17 @@ stages:
         meta:
             cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_3/cp2k
-        - nodes/cp2k_3/outputs.db
+        - nodes/train_cp2k_2/cp2k
+        - nodes/train_cp2k_2/outputs.db
         params:
         -   cp2k.yaml: null
-    cp2k_4:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_4'').run_and_save()" '
+    train_cp2k_3:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_3'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_4/atoms.db
-        - nodes/cp2k_0/cp2k/cp2k-RESTART.wfn
+        - nodes/train_atoms_3/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -199,17 +249,17 @@ stages:
         meta:
             cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_4/cp2k
-        - nodes/cp2k_4/outputs.db
+        - nodes/train_cp2k_3/cp2k
+        - nodes/train_cp2k_3/outputs.db
         params:
         -   cp2k.yaml: null
-    cp2k_5:
-        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''cp2k_5'').run_and_save()" '
+    train_cp2k_4:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_4'').run_and_save()" '
         deps:
         - BASIS_SET
         - GTH_POTENTIALS
-        - nodes/atoms_5/atoms.db
-        - nodes/cp2k_0/cp2k/cp2k-RESTART.wfn
+        - nodes/train_atoms_4/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
         desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
             \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
             \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
@@ -226,9 +276,154 @@ stages:
             \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
             \  https://github.com/cp2k/cp2k-input-tools\n\n    "
         meta:
-            cp2k_shell: cp2k_shell.psmp
+            cp2k_shell: mpirun cp2k_shell.psmp
         outs:
-        - nodes/cp2k_5/cp2k
-        - nodes/cp2k_5/outputs.db
+        - nodes/train_cp2k_4/cp2k
+        - nodes/train_cp2k_4/outputs.db
+        params:
+        -   cp2k.yaml: null
+    train_cp2k_5:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_5'').run_and_save()" '
+        deps:
+        - BASIS_SET
+        - GTH_POTENTIALS
+        - nodes/train_atoms_5/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+        desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
+            \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
+            \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
+            \ @ \"atoms\"' or some other Node output.\n    input_file: str\n     \
+            \   A yaml file as input for CP2k. A good way to generate is by using\n\
+            \        'fromcp2k --format yaml cp2k.inp > cp2k.yaml' from the cp2k-input-tools\
+            \ library.\n    dependencies: list[str]\n        Files such as the BASIS_SET_FILE\
+            \ or POTENTIAL_FILE should be passed as a\n        dependency to check\
+            \ for changes in them.\n    wfn_restart: str\n        Typically, this\
+            \ would be 'CP2KNode().wfn_restart_file' from another Node.\n        But\
+            \ it can also be another CP2K wavefunction restart file. Make sure to\
+            \ use\n        'scf_guess: restart' to make use of it.\n\n    References\n\
+            \    ----------\n    https://www.cp2k.org/\n    https://www.cp2k.org/howto:static_calculation\n\
+            \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
+            \  https://github.com/cp2k/cp2k-input-tools\n\n    "
+        meta:
+            cp2k_shell: mpirun cp2k_shell.psmp
+        outs:
+        - nodes/train_cp2k_5/cp2k
+        - nodes/train_cp2k_5/outputs.db
+        params:
+        -   cp2k.yaml: null
+    train_cp2k_6:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_6'').run_and_save()" '
+        deps:
+        - BASIS_SET
+        - GTH_POTENTIALS
+        - nodes/train_atoms_6/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+        desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
+            \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
+            \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
+            \ @ \"atoms\"' or some other Node output.\n    input_file: str\n     \
+            \   A yaml file as input for CP2k. A good way to generate is by using\n\
+            \        'fromcp2k --format yaml cp2k.inp > cp2k.yaml' from the cp2k-input-tools\
+            \ library.\n    dependencies: list[str]\n        Files such as the BASIS_SET_FILE\
+            \ or POTENTIAL_FILE should be passed as a\n        dependency to check\
+            \ for changes in them.\n    wfn_restart: str\n        Typically, this\
+            \ would be 'CP2KNode().wfn_restart_file' from another Node.\n        But\
+            \ it can also be another CP2K wavefunction restart file. Make sure to\
+            \ use\n        'scf_guess: restart' to make use of it.\n\n    References\n\
+            \    ----------\n    https://www.cp2k.org/\n    https://www.cp2k.org/howto:static_calculation\n\
+            \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
+            \  https://github.com/cp2k/cp2k-input-tools\n\n    "
+        meta:
+            cp2k_shell: mpirun cp2k_shell.psmp
+        outs:
+        - nodes/train_cp2k_6/cp2k
+        - nodes/train_cp2k_6/outputs.db
+        params:
+        -   cp2k.yaml: null
+    train_cp2k_7:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_7'').run_and_save()" '
+        deps:
+        - BASIS_SET
+        - GTH_POTENTIALS
+        - nodes/train_atoms_7/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+        desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
+            \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
+            \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
+            \ @ \"atoms\"' or some other Node output.\n    input_file: str\n     \
+            \   A yaml file as input for CP2k. A good way to generate is by using\n\
+            \        'fromcp2k --format yaml cp2k.inp > cp2k.yaml' from the cp2k-input-tools\
+            \ library.\n    dependencies: list[str]\n        Files such as the BASIS_SET_FILE\
+            \ or POTENTIAL_FILE should be passed as a\n        dependency to check\
+            \ for changes in them.\n    wfn_restart: str\n        Typically, this\
+            \ would be 'CP2KNode().wfn_restart_file' from another Node.\n        But\
+            \ it can also be another CP2K wavefunction restart file. Make sure to\
+            \ use\n        'scf_guess: restart' to make use of it.\n\n    References\n\
+            \    ----------\n    https://www.cp2k.org/\n    https://www.cp2k.org/howto:static_calculation\n\
+            \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
+            \  https://github.com/cp2k/cp2k-input-tools\n\n    "
+        meta:
+            cp2k_shell: mpirun cp2k_shell.psmp
+        outs:
+        - nodes/train_cp2k_7/cp2k
+        - nodes/train_cp2k_7/outputs.db
+        params:
+        -   cp2k.yaml: null
+    train_cp2k_8:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_8'').run_and_save()" '
+        deps:
+        - BASIS_SET
+        - GTH_POTENTIALS
+        - nodes/train_atoms_8/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+        desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
+            \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
+            \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
+            \ @ \"atoms\"' or some other Node output.\n    input_file: str\n     \
+            \   A yaml file as input for CP2k. A good way to generate is by using\n\
+            \        'fromcp2k --format yaml cp2k.inp > cp2k.yaml' from the cp2k-input-tools\
+            \ library.\n    dependencies: list[str]\n        Files such as the BASIS_SET_FILE\
+            \ or POTENTIAL_FILE should be passed as a\n        dependency to check\
+            \ for changes in them.\n    wfn_restart: str\n        Typically, this\
+            \ would be 'CP2KNode().wfn_restart_file' from another Node.\n        But\
+            \ it can also be another CP2K wavefunction restart file. Make sure to\
+            \ use\n        'scf_guess: restart' to make use of it.\n\n    References\n\
+            \    ----------\n    https://www.cp2k.org/\n    https://www.cp2k.org/howto:static_calculation\n\
+            \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
+            \  https://github.com/cp2k/cp2k-input-tools\n\n    "
+        meta:
+            cp2k_shell: mpirun cp2k_shell.psmp
+        outs:
+        - nodes/train_cp2k_8/cp2k
+        - nodes/train_cp2k_8/outputs.db
+        params:
+        -   cp2k.yaml: null
+    train_cp2k_9:
+        cmd: 'python3 -c "from znlib.atomistic.cp2k import CP2KNode; CP2KNode.load(name=''train_cp2k_9'').run_and_save()" '
+        deps:
+        - BASIS_SET
+        - GTH_POTENTIALS
+        - nodes/train_atoms_9/atoms.db
+        - nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn
+        desc: "CP2K Node\n\n    This Node allows you to perform single point calculation\
+            \ using CP2K\n\n    Parameters\n    ----------\n    atoms: AtomsList\n\
+            \        The ASE atoms objects to use. Typically, this is\n        'znlib.atomistic.FileToASE()\
+            \ @ \"atoms\"' or some other Node output.\n    input_file: str\n     \
+            \   A yaml file as input for CP2k. A good way to generate is by using\n\
+            \        'fromcp2k --format yaml cp2k.inp > cp2k.yaml' from the cp2k-input-tools\
+            \ library.\n    dependencies: list[str]\n        Files such as the BASIS_SET_FILE\
+            \ or POTENTIAL_FILE should be passed as a\n        dependency to check\
+            \ for changes in them.\n    wfn_restart: str\n        Typically, this\
+            \ would be 'CP2KNode().wfn_restart_file' from another Node.\n        But\
+            \ it can also be another CP2K wavefunction restart file. Make sure to\
+            \ use\n        'scf_guess: restart' to make use of it.\n\n    References\n\
+            \    ----------\n    https://www.cp2k.org/\n    https://www.cp2k.org/howto:static_calculation\n\
+            \    https://databases.fysik.dtu.dk/ase/ase/calculators/cp2k.html\n  \
+            \  https://github.com/cp2k/cp2k-input-tools\n\n    "
+        meta:
+            cp2k_shell: mpirun cp2k_shell.psmp
+        outs:
+        - nodes/train_cp2k_9/cp2k
+        - nodes/train_cp2k_9/outputs.db
         params:
         -   cp2k.yaml: null

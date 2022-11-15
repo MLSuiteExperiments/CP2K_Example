@@ -1,47 +1,59 @@
 {
-    "atoms_0": {
+    "train_atoms_0": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/000.extxyz"
+            "value": "configurations/training_750.extxyz"
         }
     },
-    "atoms_1": {
+    "train_atoms_1": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/002.extxyz"
+            "value": "configurations/training_027.extxyz"
         }
     },
-    "atoms_2": {
+    "train_atoms_2": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/001.extxyz"
+            "value": "configurations/training_623.extxyz"
         }
     },
-    "atoms_3": {
+    "train_atoms_3": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/004.extxyz"
+            "value": "configurations/training_302.extxyz"
         }
     },
-    "atoms_4": {
+    "train_atoms_4": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/003.extxyz"
+            "value": "configurations/training_212.extxyz"
         }
     },
-    "cp2k_0": {
+    "train_atoms_5": {
+        "file": {
+            "_type": "pathlib.Path",
+            "value": "configurations/training_780.extxyz"
+        }
+    },
+    "train_atoms_6": {
+        "file": {
+            "_type": "pathlib.Path",
+            "value": "configurations/training_738.extxyz"
+        }
+    },
+    "train_cp2k_0": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_0",
+                "name": "train_atoms_0",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k"
+            "value": "nodes/train_cp2k_0/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -50,19 +62,19 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": null
     },
-    "cp2k_1": {
+    "train_cp2k_1": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_1",
+                "name": "train_atoms_1",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_1/cp2k"
+            "value": "nodes/train_cp2k_1/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -71,22 +83,22 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k/cp2k-RESTART.wfn"
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
         }
     },
-    "cp2k_2": {
+    "train_cp2k_2": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_2",
+                "name": "train_atoms_2",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_2/cp2k"
+            "value": "nodes/train_cp2k_2/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -95,22 +107,22 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k/cp2k-RESTART.wfn"
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
         }
     },
-    "cp2k_3": {
+    "train_cp2k_3": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_3",
+                "name": "train_atoms_3",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_3/cp2k"
+            "value": "nodes/train_cp2k_3/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -119,22 +131,22 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k/cp2k-RESTART.wfn"
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
         }
     },
-    "cp2k_4": {
+    "train_cp2k_4": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_4",
+                "name": "train_atoms_4",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_4/cp2k"
+            "value": "nodes/train_cp2k_4/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -143,28 +155,82 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k/cp2k-RESTART.wfn"
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
         }
     },
-    "atoms_5": {
+    "train_cp2k_5": {
+        "atoms": {
+            "_type": "NodeAttribute",
+            "value": {
+                "module": "znlib.atomistic.ase",
+                "cls": "FileToASE",
+                "name": "train_atoms_5",
+                "attribute": "atoms"
+            }
+        },
+        "cp2k_output_dir": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_5/cp2k"
+        },
+        "dependencies": [
+            "BASIS_SET",
+            "GTH_POTENTIALS"
+        ],
+        "input_file": "cp2k.yaml",
+        "wfn_restart": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
+        }
+    },
+    "train_cp2k_6": {
+        "atoms": {
+            "_type": "NodeAttribute",
+            "value": {
+                "module": "znlib.atomistic.ase",
+                "cls": "FileToASE",
+                "name": "train_atoms_6",
+                "attribute": "atoms"
+            }
+        },
+        "cp2k_output_dir": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_6/cp2k"
+        },
+        "dependencies": [
+            "BASIS_SET",
+            "GTH_POTENTIALS"
+        ],
+        "input_file": "cp2k.yaml",
+        "wfn_restart": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
+        }
+    },
+    "train_atoms_7": {
         "file": {
             "_type": "pathlib.Path",
-            "value": "configurations/005.extxyz"
+            "value": "configurations/training_311.extxyz"
         }
     },
-    "cp2k_5": {
+    "train_atoms_8": {
+        "file": {
+            "_type": "pathlib.Path",
+            "value": "configurations/training_029.extxyz"
+        }
+    },
+    "train_cp2k_7": {
         "atoms": {
             "_type": "NodeAttribute",
             "value": {
                 "module": "znlib.atomistic.ase",
                 "cls": "FileToASE",
-                "name": "atoms_5",
+                "name": "train_atoms_7",
                 "attribute": "atoms"
             }
         },
         "cp2k_output_dir": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_5/cp2k"
+            "value": "nodes/train_cp2k_7/cp2k"
         },
         "dependencies": [
             "BASIS_SET",
@@ -173,7 +239,91 @@
         "input_file": "cp2k.yaml",
         "wfn_restart": {
             "_type": "pathlib.Path",
-            "value": "nodes/cp2k_0/cp2k/cp2k-RESTART.wfn"
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
+        }
+    },
+    "train_cp2k_8": {
+        "atoms": {
+            "_type": "NodeAttribute",
+            "value": {
+                "module": "znlib.atomistic.ase",
+                "cls": "FileToASE",
+                "name": "train_atoms_8",
+                "attribute": "atoms"
+            }
+        },
+        "cp2k_output_dir": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_8/cp2k"
+        },
+        "dependencies": [
+            "BASIS_SET",
+            "GTH_POTENTIALS"
+        ],
+        "input_file": "cp2k.yaml",
+        "wfn_restart": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
+        }
+    },
+    "train_atoms_9": {
+        "file": {
+            "_type": "pathlib.Path",
+            "value": "configurations/training_397.extxyz"
+        }
+    },
+    "train_atoms_10": {
+        "file": {
+            "_type": "pathlib.Path",
+            "value": "configurations/training_432.extxyz"
+        }
+    },
+    "train_cp2k_9": {
+        "atoms": {
+            "_type": "NodeAttribute",
+            "value": {
+                "module": "znlib.atomistic.ase",
+                "cls": "FileToASE",
+                "name": "train_atoms_9",
+                "attribute": "atoms"
+            }
+        },
+        "cp2k_output_dir": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_9/cp2k"
+        },
+        "dependencies": [
+            "BASIS_SET",
+            "GTH_POTENTIALS"
+        ],
+        "input_file": "cp2k.yaml",
+        "wfn_restart": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
+        }
+    },
+    "train_cp2k_10": {
+        "atoms": {
+            "_type": "NodeAttribute",
+            "value": {
+                "module": "znlib.atomistic.ase",
+                "cls": "FileToASE",
+                "name": "train_atoms_10",
+                "attribute": "atoms"
+            }
+        },
+        "cp2k_output_dir": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_10/cp2k"
+        },
+        "dependencies": [
+            "BASIS_SET",
+            "GTH_POTENTIALS"
+        ],
+        "input_file": "cp2k.yaml",
+        "wfn_restart": {
+            "_type": "pathlib.Path",
+            "value": "nodes/train_cp2k_0/cp2k/cp2k-RESTART.wfn"
         }
     }
 }

@@ -1,5 +1,5 @@
 outs:
-- md5: 9a66b08c77246509bb9750611c1dbdc8.dir
-  size: 3246
-  nfiles: 6
+- md5: db3d162b3fe9d0387d19f6f5a4b4827d.dir
+  size: 31635797
+  nfiles: 1000
   path: configurations
